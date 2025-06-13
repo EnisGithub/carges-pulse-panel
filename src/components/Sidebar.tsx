@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { 
   LayoutDashboard, 
@@ -9,7 +8,8 @@ import {
   DollarSign,
   Calendar,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Terminal
 } from "lucide-react";
 
 interface SidebarProps {
@@ -26,6 +26,7 @@ const menuItems = [
   { id: "media", label: "Media Library", icon: FileText },
   { id: "finance", label: "Finance & Crypto", icon: DollarSign },
   { id: "promo", label: "Promo Orders", icon: Calendar },
+  { id: "scripts", label: "Scripts & Control", icon: Terminal },
   { id: "team", label: "Team & Tasks", icon: Users },
   { id: "settings", label: "Settings & Admin", icon: Settings },
 ];
