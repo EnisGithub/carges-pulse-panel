@@ -11,7 +11,11 @@ import {
   ChevronLeft,
   ChevronRight,
   Terminal,
-  HardDrive
+  HardDrive,
+  Music,
+  Share2,
+  Map,
+  AlertTriangle
 } from "lucide-react";
 
 interface SidebarProps {
@@ -24,12 +28,15 @@ interface SidebarProps {
 const menuItems = [
   { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
   { id: "artists", label: "Artists & Releases", icon: Users },
-  { id: "analytics", label: "Analytics & Reports", icon: Database },
+  { id: "playlists", label: "Playlists", icon: Music },
+  { id: "social", label: "Social Media", icon: Share2 },
+  { id: "analytics", label: "Analytics & Map", icon: Map },
   { id: "media", label: "Media Library", icon: FileText },
   { id: "finance", label: "Finance & Crypto", icon: DollarSign },
   { id: "promo", label: "Promo Orders", icon: Calendar },
   { id: "scripts", label: "Scripts & Control", icon: Terminal },
   { id: "backup", label: "NAS Backup", icon: HardDrive },
+  { id: "risks", label: "Risk Management", icon: AlertTriangle },
   { id: "team", label: "Team & Tasks", icon: Users },
   { id: "settings", label: "Settings & Admin", icon: Settings },
 ];

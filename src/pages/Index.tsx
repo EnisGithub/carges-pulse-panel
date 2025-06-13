@@ -11,6 +11,9 @@ import { Scripts } from "@/components/Scripts";
 import { NASBackup } from "@/components/NASBackup";
 import { TeamTasks } from "@/components/TeamTasks";
 import { Settings } from "@/components/Settings";
+import { Playlists } from "@/components/Playlists";
+import { SocialMedia } from "@/components/SocialMedia";
+import { RiskManagement } from "@/components/RiskManagement";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
@@ -22,6 +25,10 @@ const Index = () => {
         return <Dashboard />;
       case "artists":
         return <Artists />;
+      case "playlists":
+        return <Playlists />;
+      case "social":
+        return <SocialMedia />;
       case "analytics":
         return <Analytics />;
       case "media":
@@ -34,6 +41,8 @@ const Index = () => {
         return <Scripts />;
       case "backup":
         return <NASBackup />;
+      case "risks":
+        return <RiskManagement />;
       case "team":
         return <TeamTasks />;
       case "settings":
