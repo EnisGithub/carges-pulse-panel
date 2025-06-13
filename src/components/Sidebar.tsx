@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { 
   LayoutDashboard, 
@@ -9,7 +10,8 @@ import {
   Calendar,
   ChevronLeft,
   ChevronRight,
-  Terminal
+  Terminal,
+  HardDrive
 } from "lucide-react";
 
 interface SidebarProps {
@@ -27,6 +29,7 @@ const menuItems = [
   { id: "finance", label: "Finance & Crypto", icon: DollarSign },
   { id: "promo", label: "Promo Orders", icon: Calendar },
   { id: "scripts", label: "Scripts & Control", icon: Terminal },
+  { id: "backup", label: "NAS Backup", icon: HardDrive },
   { id: "team", label: "Team & Tasks", icon: Users },
   { id: "settings", label: "Settings & Admin", icon: Settings },
 ];

@@ -1,9 +1,8 @@
-
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Users, Music, Search, Plus } from "lucide-react";
+import { Users, Music, Search, Plus, Edit, Trash2, Eye, Download, Upload, Star } from "lucide-react";
 
 const artistsData = [
   {
@@ -103,10 +102,20 @@ export const Artists = () => {
             className="pl-10 bg-slate-800 border-slate-600 text-white w-80"
           />
         </div>
-        <Button className="bg-green-600 hover:bg-green-700">
-          <Plus className="w-4 h-4 mr-2" />
-          Add {activeView === "artists" ? "Artist" : "Release"}
-        </Button>
+        <div className="flex gap-2">
+          <Button className="bg-green-600 hover:bg-green-700">
+            <Plus className="w-4 h-4 mr-2" />
+            Add {activeView === "artists" ? "Artist" : "Release"}
+          </Button>
+          <Button variant="outline">
+            <Upload className="w-4 h-4 mr-2" />
+            Import
+          </Button>
+          <Button variant="outline">
+            <Download className="w-4 h-4 mr-2" />
+            Export
+          </Button>
+        </div>
       </div>
 
       {activeView === "artists" ? (
@@ -116,11 +125,14 @@ export const Artists = () => {
               <CardHeader>
                 <CardTitle className="text-white flex items-center justify-between">
                   {artist.name}
-                  <span className={`text-xs px-2 py-1 rounded-full ${
-                    artist.status === "Active" ? "bg-green-600" : "bg-slate-600"
-                  }`}>
-                    {artist.status}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <Star className="w-4 h-4 text-yellow-400" />
+                    <span className={`text-xs px-2 py-1 rounded-full ${
+                      artist.status === "Active" ? "bg-green-600" : "bg-slate-600"
+                    }`}>
+                      {artist.status}
+                    </span>
+                  </div>
                 </CardTitle>
                 <p className="text-slate-400">{artist.genre}</p>
               </CardHeader>
@@ -139,12 +151,22 @@ export const Artists = () => {
                     <span className="text-green-400">{artist.revenue}</span>
                   </div>
                 </div>
-                <div className="mt-4 flex gap-2">
-                  <Button size="sm" variant="outline" className="flex-1">
-                    View Details
+                <div className="mt-4 grid grid-cols-2 gap-2">
+                  <Button size="sm" variant="outline" className="flex items-center gap-1">
+                    <Eye className="w-3 h-3" />
+                    View
                   </Button>
-                  <Button size="sm" className="flex-1 bg-purple-600 hover:bg-purple-700">
-                    Manage
+                  <Button size="sm" className="bg-purple-600 hover:bg-purple-700 flex items-center gap-1">
+                    <Edit className="w-3 h-3" />
+                    Edit
+                  </Button>
+                  <Button size="sm" variant="outline" className="flex items-center gap-1">
+                    <Music className="w-3 h-3" />
+                    Releases
+                  </Button>
+                  <Button size="sm" variant="outline" className="text-red-400 hover:text-red-300 flex items-center gap-1">
+                    <Trash2 className="w-3 h-3" />
+                    Remove
                   </Button>
                 </div>
               </CardContent>
@@ -181,12 +203,18 @@ export const Artists = () => {
                         </span>
                       </td>
                       <td className="p-4">
-                        <div className="flex gap-2">
+                        <div className="flex gap-1">
                           <Button size="sm" variant="outline">
-                            Edit
+                            <Eye className="w-3 h-3" />
+                          </Button>
+                          <Button size="sm" variant="outline">
+                            <Edit className="w-3 h-3" />
                           </Button>
                           <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
-                            View
+                            <Download className="w-3 h-3" />
+                          </Button>
+                          <Button size="sm" variant="outline" className="text-red-400 hover:text-red-300">
+                            <Trash2 className="w-3 h-3" />
                           </Button>
                         </div>
                       </td>

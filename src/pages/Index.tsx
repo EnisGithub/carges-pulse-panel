@@ -8,6 +8,7 @@ import { MediaLibrary } from "@/components/MediaLibrary";
 import { Finance } from "@/components/Finance";
 import { PromoOrders } from "@/components/PromoOrders";
 import { Scripts } from "@/components/Scripts";
+import { NASBackup } from "@/components/NASBackup";
 import { TeamTasks } from "@/components/TeamTasks";
 import { Settings } from "@/components/Settings";
 
@@ -31,6 +32,8 @@ const Index = () => {
         return <PromoOrders />;
       case "scripts":
         return <Scripts />;
+      case "backup":
+        return <NASBackup />;
       case "team":
         return <TeamTasks />;
       case "settings":
